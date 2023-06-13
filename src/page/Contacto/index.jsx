@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "../../componente/NavBar/navBar";
-import ItemListContainer from "../../componente/IntemListContainer";
+import ItemListContainer from "../../componente/ItemListContainer/index";
 const contacto = () => 
 {
     return (
@@ -11,6 +11,7 @@ const contacto = () =>
             <NavBar/>
             {/*ItemListContainer recibe un promp que en esta caso se llama greeting */}
             <ItemListContainer greeting={"Bienvenido"}/>
+            
         </>
     );
 }
