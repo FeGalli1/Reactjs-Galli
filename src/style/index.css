@@ -1,0 +1,25 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e2d4d4;
+  padding: 10px;
+}
+
+.navbar-brand {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.navbar-menu {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-menu button {
+  margin: 0 10px;
+}
+
+.navbar-search {
+  margin-right: 10px;
+}

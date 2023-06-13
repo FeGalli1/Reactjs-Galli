@@ -1,22 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import './style/index.css'
+import Contacto from './page/Contacto';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {/**Dentro de la page contacto tendremos los componentes que pide la entrega*/}
+        <Contacto/>
       </header>
     </div>
   );
