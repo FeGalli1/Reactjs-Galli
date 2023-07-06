@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Item from '../Item/index'
 
 const IntemList =({productos}) => {
+    
     return (
         <div class="container">
             <div class="row">

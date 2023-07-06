@@ -1,18 +1,16 @@
 import React from "react";
 import carrito from './assets/carrito.svg';
 
-const CardWidget = () => {
+const CardWidget = ( ) => {
   const handleClick = () => {
-    // aca se ejecutaria lo que 
+    //agregaria fucionalidades del carrito
     console.log("Se hizo clic en la imagen del Carrito de compras");
   };
-  
-  return (
-    //le agrego la opcion onClick para cuando se haga clic ejecute "handleClick"
-    <button style={{ border: 'none', background: 'none', padding: 0 }} onClick={handleClick}>
-      <img src={carrito} alt="Carrito de compras" />
-      0
 
+  return (
+    <button className="btn" onClick={handleClick}>
+      <img src={carrito} alt="Carrito de compras" />
+      {0}
     </button>
   );
 };

@@ -1,6 +1,6 @@
 const productos = [
     {
-      id: 1,
+      id: "1",
       category: "lienzo",
       stock:1,
       nombre: 'Pexels Steve Johnson',
@@ -10,7 +10,7 @@ const productos = [
         'Arte moderno virtual. Esta obra fue publicada el 9 de agosto del 2021 por Steve Johnson en pexels. Fue diseñada virtualmente con el software Adobe Photoshop.',
     },
     {
-      id: 2,
+      id: "2",
       category: "lienzo",
       stock:1,
       nombre: 'Costa En Santa Cristina',
@@ -20,7 +20,7 @@ const productos = [
         'Una obra del autor Joaquin Sorolla Y Bastida y fue hecha en el año 1914. Esta hecha con la tecnica de óleo sobre lienzo y tiene una dimension de 99x74 cm',
     },
     {
-      id: 3,
+      id: "3",
       category: "papel",
       stock:1,
       nombre: 'Tintas Tintas y Tintas',
@@ -30,7 +30,7 @@ const productos = [
         'Una obra de la autora Luchi Sanguinetti. El color y la forma prevalecen en mi visión. Aparece reiteradamente formas percibidas en el pasado, las cuales han dejado huella en mi memoria.',
     },
     {
-      id: 4,
+      id: "4",
       category: "papel",
       stock:1,
       nombre: 'On The Road From Moret',
@@ -51,12 +51,15 @@ const productos = [
 
   export const getProductosById = (productoId) => {
         return new Promise((resolve) => {
+          setTimeout(() =>{
             resolve(productos.find(prod => prod.id === productoId))
+        },500 )  
         })
   }
 
   export const getProductosByCategory = (productoCategory) => {
     return new Promise((resolve) => {
-        resolve(productos.find(prod => prod.category === productoCategory))
-    })
-  }
+      resolve(productos.filter((prod) => prod.category === productoCategory));
+    });
+  };
+  
