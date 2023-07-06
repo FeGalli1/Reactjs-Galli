@@ -1,15 +1,27 @@
+import { NavLink } from "react-router-dom";
 import CardWidget from "../CardWidget/cardWidget";
 
-const botonNavBar = () =>
-{
-    return(
-        <div className="navbar-menu">
-            <button>Inicio</button>
-            <button>Obras</button>
-            <button>Contacto</button>
-            <CardWidget/>
-        </div>
-    )
+const BotonNavBar = () => {
+  return (
+    <div className="navbar-menu categorias">
+      <div className="button-wrapper">
+        <NavLink exact to="/" activeClassName="ActiveOpcion" className="btn  btn-custom">
+          Inicio
+        </NavLink>
+      </div>
+      <div className="button-wrapper">
+        <NavLink to="/category/lienzo" activeClassName="ActiveOpcion" className="btn  btn-custom">
+          Lienzo
+        </NavLink>
+      </div>
+      <div className="button-wrapper">
+        <NavLink to="/category/papel" activeClassName="ActiveOpcion" className="btn  btn-custom">
+          Papel
+        </NavLink>
+      </div>
+      <CardWidget />
+    </div>
+  );
 };
 
-export default botonNavBar;
+export default BotonNavBar;

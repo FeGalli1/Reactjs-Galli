@@ -16,10 +16,21 @@
   justify-content: center;
 }
 
-.navbar-menu button {
-  margin: 0 10px;
-}
-
 .navbar-search {
   margin-right: 10px;
 }
+.button-wrapper {
+  margin-right: 0.5rem;
+}
+
+.btn-custom {
+  background-color: transparent;
+  color: #000000;
+  border: none;
+}
+
+.btn-custom.ActiveOpcion {
+  background-color: #007bff;
+  color: #ffffff;
+}
+

@@ -8,8 +8,8 @@ const NavBar = () => {
       <div className="navbar-brand">Tienda</div>
       <BotonNavBar />
       <div className="navbar-search">
-        <input type="text" placeholder="Buscar..." />
-        <button>Buscar</button>
+{/*        <input type="text" placeholder="Buscar..." />
+        <button>Buscar</button> aca pondre un buscador de texto  */}
       </div>
     </div>
   );

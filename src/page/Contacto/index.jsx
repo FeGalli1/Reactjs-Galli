@@ -9,7 +9,8 @@ const contacto = () =>
              3 botonoes "inicio","obras" y "contacto" y el cardWidget,ubicados en el centro
              y por ultimo un buscador en la parte derecha */}
             <NavBar/>
-            {/*ItemListContainer recibe un promp que en esta caso se llama greeting */}
+     
+                        {/*ItemListContainer recibe un promp que en esta caso se llama greeting */}
             <ItemListContainer greeting={"Bienvenido"}/>
             
         </>
