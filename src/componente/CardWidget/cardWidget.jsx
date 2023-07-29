@@ -1,17 +1,19 @@
 import React from "react";
 import carrito from './assets/carrito.svg';
+import { Dropdown } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
+import { useCartContext } from "./CartContext";
 
-const CardWidget = ( ) => {
-  const handleClick = () => {
-    //agregaria fucionalidades del carrito
-    console.log("Se hizo clic en la imagen del Carrito de compras");
-  };
+const CardWidget = () => {
+  const { cartQuantity } = useCartContext();
 
   return (
-    <button className="btn" onClick={handleClick}>
-      <img src={carrito} alt="Carrito de compras" />
-      {0}
-    </button>
+    <div className="button-wrapper">
+      <Dropdown.Item as={NavLink} to="/carrito" activeClassName="ActiveOpcion">
+        <img src={carrito} alt="Carrito de compras" />
+        {cartQuantity}
+      </Dropdown.Item>
+    </div>
   );
 };
 

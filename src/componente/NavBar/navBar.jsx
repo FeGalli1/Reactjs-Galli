@@ -12,7 +12,7 @@ const NavBar = () => {
       </div>
       <BotonNavBar />
       <div className="navbar-search">
-        {/* Aquí puedes agregar el código para el buscador */}
+        {/* Aquí puedes agregar el código para el buscador, mantuve el diseño para dejar centrado el navegador y si me da el tiempo lo agrego */}
       </div>
     </div>
   );

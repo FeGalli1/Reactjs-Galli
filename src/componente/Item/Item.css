@@ -1,0 +1,72 @@
+.card {
+  min-height: 500px;
+  
+}
+.image-container {
+    position: relative;
+    height: 300px;
+
+  }
+.image-container img {
+  width: 100%;
+  height: 100%;
+}
+  
+  .vendido-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.66);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .vendido-overlay span {
+    font-size: 50px;
+    font-family: 'Open Sans', sans-serif;
+    padding: 8px 16px;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  .show-more-btn {
+    background-color: transparent;
+    border: none;
+    color: blue;
+    cursor: pointer;
+    margin-bottom: 15%;
+  }
+  .description {
+    max-height: 80px; /* Altura máxima inicial de la descripción */
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out; /* Animación de la transición */
+  }
+  
+  .description.show-full {
+    max-height: 1000px; /* Altura máxima para mostrar la descripción completa */
+  }
+/* Agrega estos estilos adicionales */
+.description.show-less {
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Muestra solo las 4 primeras líneas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.ItemFooter {
+  position: absolute;
+  bottom: 10px;
+}
+
+
+
+  /*
+'Arial', sans-serif: Una fuente clásica y legible.
+'Helvetica', sans-serif: Una fuente limpia y moderna.
+'Roboto', sans-serif: Una fuente versátil y legible.
+'Montserrat', sans-serif: Una fuente geométrica y elegante.
+'Open Sans', sans-serif: Una fuente amigable y fácil de leer.
+'Lato', sans-serif: Una fuente equilibrada y legible.
+*/

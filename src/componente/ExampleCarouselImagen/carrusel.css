@@ -1,0 +1,62 @@
+/* Estilos comunes para todas las resoluciones */
+.carruselImg {
+    height: 600px;
+    width: 90%;
+    margin: 30px;
+  }
+  
+  .carrusel-texto {
+    margin: 30px;
+    font-size: 2rem;
+    color: azure;
+  }
+  
+  .carousel-item {
+    background-color: rgb(2, 3, 3);
+  }
+  
+  /* Media Query para pantallas medianas y grandes */
+  @media (min-width: 768px) {
+    .carousel-container {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    .carruselImg-container {
+      flex: 1;
+    }
+  
+    .carrusel-texto {
+      flex: 1;
+      margin: 30px;
+      font-size: 2rem;
+      color: azure;
+    }
+  }
+  
+  /* Media Query para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .carousel-container {
+        display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+  
+    .carousel-item {
+      height: 500px;
+    }
+  
+    .carruselImg {
+      height: 200px;
+      width: 90%;
+      margin: 22px;
+    }
+  
+    .carrusel-texto {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+  }
+  

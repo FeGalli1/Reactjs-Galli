@@ -1,8 +1,9 @@
+/*
 const productos = [
     {
       id: "1",
       category: "lienzo",
-      stock:1,
+      stock:0,
       nombre: 'Pexels Steve Johnson',
       precio: 15000,
       imagen: 'https://i.ibb.co/H7zYsZZ/pexels-steve-johnson.jpg',
@@ -63,3 +64,4 @@ const productos = [
     });
   };
   
+  */

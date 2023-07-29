@@ -1,24 +1,35 @@
 import React, { useEffect, useState } from "react";
-import { getProductos, getProductosByCategory } from "../../asyncMock";
 import ItemList from "../ItemList/Index";
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
   const [productos, setProductos] = useState([]);
   const { categoriaId } = useParams();
-
   useEffect(() => {
-    const asyncFunc = categoriaId ? getProductosByCategory : getProductos
+    const db = getFirestore();
+    const productosCollection = collection(db, "productos");
+    let productosQuery = query(productosCollection);
 
-    asyncFunc(categoriaId)
-      .then (response => {
-        setProductos(response);
-      }) 
-      .catch(error => {
-        console.error((error));
+    // Si se proporciona la categoría, filtrar por ella
+    if (categoriaId) {
+      productosQuery = query(productosCollection, where("category", "==", categoriaId));
+    }
+
+    getDocs(productosQuery)
+      .then((snapshot) => {
+        const items = snapshot.docs.map((doc) => {
+          return {
+            id: doc.id,
+            ...doc.data(),
+          };
+        });
+        setProductos(items);
       })
-  }, [categoriaId])
-
+      .catch((error) => {
+        console.log("Error fetching productos: ", error);
+      });
+  }, [categoriaId]);
 
   return (
     <div>
