@@ -38,7 +38,6 @@ function App() {
     <div className="App">
       <CartProvider>
       <BrowserRouter>
-        <NavBar />
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/category" element={<ItemListContainer />} />
@@ -52,8 +51,6 @@ function App() {
       </BrowserRouter>
       </CartProvider>
 
-
-     
     </div>
   );
 }

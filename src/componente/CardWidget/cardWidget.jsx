@@ -1,17 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import carrito from './assets/carrito.svg';
 import { Dropdown } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import { useCartContext } from "./CartContext";
+import { CartContext } from "./CartContext";
 
 const CardWidget = () => {
-  const { cartQuantity } = useCartContext();
-
+  const { totalQuantity } = useContext(CartContext);
+  console.log(totalQuantity);
   return (
     <div className="button-wrapper">
       <Dropdown.Item as={NavLink} to="/carrito" activeClassName="ActiveOpcion">
         <img src={carrito} alt="Carrito de compras" />
-        {cartQuantity}
+        {totalQuantity}
       </Dropdown.Item>
     </div>
   );

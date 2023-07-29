@@ -1,25 +1,24 @@
-// ItemDetail.jsx
-import React from "react";
-import PropTypes from "prop-types";
-import { Card, Button } from "react-bootstrap";
+import React, { useContext, useState } from "react";
+import { Card } from "react-bootstrap";
 import "./index.css";
-import { useCartContext } from "../CardWidget/CartContext";
+import { CartContext } from "../CardWidget/CartContext";
+import { Link } from "react-router-dom";
+import ItemCount from "../itemCount";
 
-const ItemDetail = ({ title, price, category, imageURL, description, stock }) => {
-  const { addItem, isInCart } = useCartContext();
+const ItemDetail = ({ id, title, price, category, imageURL, description, stock }) => {
 
-  const handleAddToCart = () => {
-    if (!isInCart(title)) {
-      addItem({
-        title,
-        price,
-        category,
-        imageURL,
-        description,
-        stock,
-        quantity: 1, // Inicialmente agregamos una cantidad de 1 al carrito
-      });
-    }
+  const [quantityAdded, setQuantityAdded] = useState(0);
+  const { addItem } = useContext(CartContext);
+
+  const handleOnAdd = (quantity) => {
+    setQuantityAdded(quantity);
+    const item = {
+      id,
+      title,
+      price,
+      imageURL
+    };
+    addItem(item, quantity);
   };
 
   return (
@@ -32,22 +31,21 @@ const ItemDetail = ({ title, price, category, imageURL, description, stock }) =>
           <Card.Text>{description}</Card.Text>
           <Card.Text>Precio: ${price}</Card.Text>
           <Card.Text>Stock: {stock}</Card.Text>
-          <Button className="add-to-cart-button center" onClick={handleAddToCart}>
-            Agregar al carrito
-          </Button>
+          <Card.Text>
+            {
+              quantityAdded >0 ? (
+                <Link to="/carrito" className="btn">Terminar Compra</Link>
+              ) : ( 
+                <ItemCount inicial={1} stock={stock} onadd={handleOnAdd}></ItemCount>
+              )
+            }
+          </Card.Text>
         </Card.Body>
       </Card>
     </div>
   );
 };
 
-ItemDetail.propTypes = {
-  title: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  category: PropTypes.string.isRequired,
-  imageURL: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  stock: PropTypes.number.isRequired,
-};
+
 
 export default ItemDetail;

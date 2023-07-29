@@ -1,0 +1,13 @@
+.card-item-image{
+    width: 200px;
+    height: 200px;
+    margin-right: 10px; /* Agrega un margen a la derecha para separar la imagen de los demás datos */
+    float: left; /* Alinea la imagen a la izquierda */
+  }
+  
+  .carrito-table {
+    width: 90%; /* Ajusta el porcentaje según lo desees */
+    margin: auto; /* Centra la tabla horizontalmente en la página */
+    /* Agrega otros estilos si lo necesitas */
+  }
+  
