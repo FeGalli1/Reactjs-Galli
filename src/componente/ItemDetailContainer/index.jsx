@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../ItemDetail";
 import { doc, getFirestore, getDoc } from "firebase/firestore";
+import NavBar from "../NavBar/navBar";
 
 const ItemDetailContainer = () => {
   const [producto, setProducto] = useState(null);
@@ -29,8 +30,11 @@ const ItemDetailContainer = () => {
   }, [itemId]);
 
   return (
-    <div className="ItemDetailContainer">
-      {producto ? <ItemDetail {...producto} /> : <div>Cargando...</div>}
+    <div>
+      <NavBar />
+      <div className="ItemDetailContainer">
+        {producto ? <ItemDetail {...producto} /> : <div>Cargando...</div>}
+      </div>
     </div>
   );
 };

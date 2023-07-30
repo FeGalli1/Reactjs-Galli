@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Card } from "react-bootstrap";
+import { Card, Navbar } from "react-bootstrap";
 import "./index.css";
 import { CartContext } from "../CardWidget/CartContext";
 import { Link } from "react-router-dom";

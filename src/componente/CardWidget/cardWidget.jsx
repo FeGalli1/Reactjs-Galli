@@ -5,13 +5,13 @@ import { NavLink } from "react-router-dom";
 import { CartContext } from "./CartContext";
 
 const CardWidget = () => {
-  const { totalQuantity } = useContext(CartContext);
-  console.log(totalQuantity);
+  const { cart } = useContext(CartContext);
+  console.log(cart);
   return (
     <div className="button-wrapper">
       <Dropdown.Item as={NavLink} to="/carrito" activeClassName="ActiveOpcion">
         <img src={carrito} alt="Carrito de compras" />
-        {totalQuantity}
+        {cart.length}
       </Dropdown.Item>
     </div>
   );

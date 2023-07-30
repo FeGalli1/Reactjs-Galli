@@ -7,11 +7,12 @@ import NavBar from "../componente/NavBar/navBar";
 
 
 const Carrito = () => {
-    const { cart, clearCart, totalQuantity, total } = useContext(CartContext);
+    const { cart, clearCart, total } = useContext(CartContext);
   
-    if (totalQuantity === 0) {
+    if (cart.length === 0) {
       return (
         <div>
+          <NavBar/>
           <h1>No hay productos</h1>
           <Link to="/" className="btn">
             Inicio
