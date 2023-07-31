@@ -1,7 +1,6 @@
 import './style/index.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import ItemListContainer from './componente/ItemListContainer';
-import NavBar from './componente/NavBar/navBar';
 import ItemDetailContainer from './componente/ItemDetailContainer';
 import Home from './page/Home'
 import Carrito from './page/Carrito'
