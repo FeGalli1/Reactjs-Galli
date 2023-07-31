@@ -17,18 +17,18 @@ const ItemCount = ({stock, inicial,onadd}) => {
     }
 
     return (
-        <div className="counter">
-            <div>
-                <button className="btn" onClick={decremento}>-</button>
-                <h4>{quantity}</h4>
-                <button className="btn" onClick={incremento}>+</button>
-            </div>
-            <div>
-                <button onClick={ () => onadd(quantity)} disabled={!stock}>
-                    Agregar al carrito
-                </button>
-            </div>
+        <div className="counter" style={{ display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center" }}>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <button className="btn btn-dark" onClick={decremento}>-</button>
+          <h4 style={{ margin: "20px" }}>{quantity}</h4>
+          <button className="btn btn-dark" onClick={incremento}>+</button>
         </div>
+        <div>
+          <button className="btn btn-dark" onClick={() => onadd(quantity)} disabled={!stock}>
+            Agregar al carrito
+          </button>
+        </div>
+      </div>
     )
 }
 

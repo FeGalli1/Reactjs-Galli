@@ -1,25 +1,25 @@
 import Carousel from 'react-bootstrap/Carousel';
 import CarouselImage from '../ExampleCarouselImagen/ExampleCarouselImagen';
 
-function UncontrolledExample() {
+const UncontrolledExample = ({ productos }) => {
+  console.log(productos);
   return (
     <Carousel>
-      <Carousel.Item>
-        <CarouselImage numero="1" />
-        <Carousel.Caption/>
-      </Carousel.Item>
-      
-      <Carousel.Item>
-        <CarouselImage numero="2" />
-        <Carousel.Caption/>
-      </Carousel.Item>
-      
-      <Carousel.Item>
-        <CarouselImage numero="3" />
-        <Carousel.Caption/>
-      </Carousel.Item>
+      {productos.map((producto, index) => (
+        <Carousel.Item key={index}>
+          <CarouselImage
+            imagenURL={producto.imageURL}
+            description={producto.description}
+          />
+          <Carousel.Caption />
+        </Carousel.Item>
+
+      ))}
+    
     </Carousel>
+    
   );
-}
+};
 
 export default UncontrolledExample;
+

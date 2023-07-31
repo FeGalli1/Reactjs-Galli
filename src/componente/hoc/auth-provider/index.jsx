@@ -8,7 +8,6 @@ const AuthProvider = ({children}) => {
   const [isAuth, setIsAuth] = React.useState(false);
   
   onAuthStateChanged(auth, (user) => {
-    console.log(user)
     if (!user) {
       if (isAuth) {
         setIsAuth(false);

@@ -10,7 +10,7 @@ const Main = () => {
   }
 
   return (
-    <div>
+    <div className='container'>
         <h1>Backoffice</h1>
         <button onClick={handleSignOut}>Salir</button>
         <ListProducts />

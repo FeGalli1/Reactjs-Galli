@@ -6,7 +6,6 @@ import { CartContext } from "./CartContext";
 
 const CardWidget = () => {
   const { cart } = useContext(CartContext);
-  console.log(cart);
   return (
     <div className="button-wrapper">
       <Dropdown.Item as={NavLink} to="/carrito" activeClassName="ActiveOpcion">

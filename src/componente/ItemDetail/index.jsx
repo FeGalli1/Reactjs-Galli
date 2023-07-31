@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Card, Navbar } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import "./index.css";
 import { CartContext } from "../CardWidget/CartContext";
 import { Link } from "react-router-dom";
@@ -34,7 +34,7 @@ const ItemDetail = ({ id, title, price, category, imageURL, description, stock }
           <Card.Text>
             {
               quantityAdded >0 ? (
-                <Link to="/carrito" className="btn">Terminar Compra</Link>
+                <Link to="/carrito" className="btn btn-primary">Terminar Compra</Link>
               ) : ( 
                 <ItemCount inicial={1} stock={stock} onadd={handleOnAdd}></ItemCount>
               )
