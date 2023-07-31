@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { CartContext } from "../componente/CardWidget/CartContext";
 import { Timestamp, addDoc, collection, documentId, getFirestore, getDocs, query, where, writeBatch } from "firebase/firestore";
-import CheckoutForm from "../componente/checkOut";
+import CheckoutForm from "../componente/checkOut/";
 import { Link } from "react-router-dom";
 
 
